@@ -20,24 +20,6 @@ cp "$rel_path/vimrc" "$HOME/.vimrc"
 vim +PlugInstall +qall
 
 
-##############
-#  Terminal  #
-##############
-
-# setup bash_profile
-echo 'export EDITOR=vim' >> "$HOME/.bash_profile"
-echo 'alias ls="ls -G"' >> "$HOME/.bash_profile"
-source "$HOME/.bash_profile"
-
-# add terminal autocomplete
-echo "set completion-ignore-case on" >> "$HOME/.inputrc"
-echo "set show-all-if-ambiguous on" >> "$HOME/.inputrc"
-echo "TAB: menu-complete" >> "$HOME/.inputrc"
-
-# don't show that 'last login' message
-touch "$HOME/.hushlogin"
-
-
 ############
 #  MacVim  #
 ############
@@ -57,8 +39,7 @@ hdiutil detach "$VOLUME"
 rm "$HOME/$mvim_dmg"
 
 # Add mvim to path
-echo 'export PATH=$PATH:/Applications/MacVim.app/Contents/bin' >> ~/.bash_profile
-source ~/.bash_profile
+echo 'export PATH="$PATH:/Applications/MacVim.app/Contents/bin"' >> ~/.bash_profile
 
 
 ############
@@ -74,3 +55,21 @@ rm "$HOME/$iterm_zip"
 
 iterm_gruvbox_url="https://raw.githubusercontent.com/morhetz/gruvbox-contrib/master/iterm2/gruvbox-dark.itermcolors"
 curl -L "$iterm_gruvbox_url" --output "$HOME/gruvbox-dark.itermcolors"
+
+
+##############
+#  Terminal  #
+##############
+
+# setup bash_profile
+echo 'export EDITOR=vim' >> "$HOME/.bash_profile"
+echo 'alias ls="ls -G"' >> "$HOME/.bash_profile"
+source "$HOME/.bash_profile"
+
+# add terminal autocomplete
+echo "set completion-ignore-case on" >> "$HOME/.inputrc"
+echo "set show-all-if-ambiguous on" >> "$HOME/.inputrc"
+echo "TAB: menu-complete" >> "$HOME/.inputrc"
+
+# don't show that 'last login' message
+touch "$HOME/.hushlogin"
