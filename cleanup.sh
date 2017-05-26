@@ -5,6 +5,7 @@ set -e
 printf "host=github.com\nprotocol=https\n\n" | git credential-osxkeychain erase
 git config --unset-all user.name || true
 git config --unset-all user.email || true
+rm -f ~/.gitconfig
 
 # clear chrome data
 if [[ ! $(pgrep 'Google Chrome') ]]; then
