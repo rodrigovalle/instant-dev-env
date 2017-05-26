@@ -2,6 +2,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 call plug#end()
 
 let maplocalleader=','
@@ -18,3 +20,4 @@ set softtabstop=2
 set shiftwidth=2
 set tabstop=2
 set expandtab
+set conceallevel=0
